@@ -222,7 +222,7 @@ static void dt2w_input_event(struct input_handle *handle, unsigned int type,
 }
 
 static int input_dev_filter(struct input_dev *dev) {
-	if (strstr(dev->name, "touch")) {
+	if (strstr(dev->name, "touch") || strstr(dev->name, "touch_mcs8000")) {
 		return 0;
 	} else {
 		return 1;
