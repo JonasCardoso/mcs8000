@@ -240,7 +240,7 @@ static void s2w_input_event(struct input_handle *handle, unsigned int type,
 		return;
 	}
 
-	if (code == ABS_MT_TRACKING_ID && value == -1) {
+	if ((code == ABS_MT_TRACKING_ID && value == -1) || (code == 2 && value == 0)) {
 		sweep2wake_reset();
 		return;
 	}
